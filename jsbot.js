@@ -27,7 +27,7 @@ const youtube = new YouTube("AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8");
 const sql = require("sqlite");
 const dateFormat = require('dateformat'); 
 const pretty = require('pretty-ms') 
-const prefix = 'a';
+const prefix = '+';
 var table = require('table').table
 var ti={}  
 
@@ -51,7 +51,7 @@ if(message.author.bot) return;
     channel: "welcome"
 }
 const channel = sWlc[message.guild.id].channel
-  if (message.content.startsWith(prefix + "setwelcomer")) {
+  if (message.content.startsWith(prefix + "setwlc")) {
     if(!message.member.hasPermission(`MANAGE_GUILD`)) return;
     let newChannel = message.content.split(' ').slice(1).join(" ")
     if(!newChannel) return message.reply(`**${prefix}setwelcomer <channel name>**`)
@@ -77,7 +77,7 @@ member.guild.fetchInvites().then(guildInvites => {
     const invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
     const inviter = client.users.get(invite.inviter.id);
     const yumz = member.guild.channels.find("name", `${sChannel}`);
-     yumz.send(`<@${member.user.id}> joined by <@${inviter.id}>`);
+     yumz.send(`<@${member.user.id}> **__joined by__** <@${inviter.id}>`);
    //  yumz.send(`<@${member.user.id}> joined using invite code ${invite.code} from <@${inviter.id}>. Invite was used ${invite.uses} times since its creation.`);
   }); 
       var Canvas = require('canvas')
@@ -106,13 +106,13 @@ member.guild.fetchInvites().then(guildInvites => {
       
                                     ctx.font = "bold 12px Arial";
                               ctx.fontSize = '20px';
-                              ctx.fillStyle = "#f1f1f1";
+                              ctx.fillStyle = "#fb9a0e";
                                 ctx.fillText(member.user.username, 200, 150);
                               
                               //NAMEً
                               ctx.font = "bold 12px Arial";
                               ctx.fontSize = '20px';
-                              ctx.fillStyle = "#f1f1f1";
+                              ctx.fillStyle = "#631566";
       ctx.fillText(`Welcome To Server`, 260, 125);
       
                               //AVATARً
