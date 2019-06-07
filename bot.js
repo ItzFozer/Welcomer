@@ -27,7 +27,7 @@ const youtube = new YouTube("AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8");
 const sql = require("sqlite");
 const dateFormat = require('dateformat'); 
 const pretty = require('pretty-ms') 
-const prefix = 'a';
+const prefix = '+';
 var table = require('table').table
 var ti={}  
 ,spee={}
@@ -54,10 +54,10 @@ if(message.author.bot) return;
     channel: "welcome"
 }
 const channel = sWlc[message.guild.id].channel
-  if (message.content.startsWith(prefix + "setwelcomer")) {
+  if (message.content.startsWith(prefix + "setwlc")) {
     if(!message.member.hasPermission(`MANAGE_GUILD`)) return;
     let newChannel = message.content.split(' ').slice(1).join(" ")
-    if(!newChannel) return message.reply(`**${prefix}setwelcomer <channel name>**`)
+    if(!newChannel) return message.reply(`**${prefix}setwlc <اسم الروم>**`)
     sWlc[message.guild.id].channel = newChannel
     message.channel.send(`**${message.guild.name}'s channel has been changed to ${newChannel}**`);
   }
